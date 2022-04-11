@@ -37,7 +37,6 @@ public class DiningPhil extends Thread {
             try {
                 Thread.sleep(sleepTime);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             } //Diner "Thinks"
             System.out.println("Diner " + thread_id + " says they are hungry.");
@@ -46,7 +45,6 @@ public class DiningPhil extends Thread {
             try {
                 firstFork.acquire();
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
