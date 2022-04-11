@@ -1,6 +1,8 @@
 import java.util.BitSet;
+import java.util.concurrent.*;
 
-public class waiter {
-    private static BitSet dinnersEating;
-    private static 
+public class Waiter {
+    private  BitSet dinnersEating;
+    public BlockingQueue<Page> que;
+
 }
