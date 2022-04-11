@@ -1,4 +1,6 @@
 import java.util.concurrent.Semaphore;
+import java.lang.Thread;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class DiningPhil extends Thread {
     
@@ -12,12 +14,40 @@ public class DiningPhil extends Thread {
         thread_id = id;
     }
 
-    public static void diner() {
-        // IMPLEMENT DINER CODE HERE. 
+    public static void diner(int id) {
+        System.out.println("Diner " + id + " is sitting down at the table.");
+        public int timesEaten = 0;
+        if(id % 2 == 0){                        
+            Semaphore firstFork = fork[i];      //Half of the diners will call for their left
+            Semaphore secondFork = fork[(i+1) % DINERS_NUM];   //fork first, then call for their right fork.
+        }
+        else{
+            Semaphore firstFork = fork[(i+1) % DINERS_NUM];    //The other half of the diners will call for
+            Semaphore secondFork = fork[i];     //the right fork then the left fork.
+        }
     }
 
     public void run() {
-        // INSERT THREAD CODE HERE. 
+        while (timesEaten < EAT){
+            System.out.println("Diner " + id + " says they are thinking.");
+            Thread.sleep(ThreadLocalRandom.current().nextInt(0,2000)); //Diner "Thinks" for rand time between 0 and 2 seconds
+            System.out.println("Diner " + id + " says they are hungry.");
+
+            //Code for Grabbing Forks
+            firstFork.acquire();
+            secondFork.acquire();
+
+            System.out.println("Diner " + id + " has forks and is eating.");
+            timesEaten++;
+            Thread.sleep(ThreadLocalRandom.current().nextInt(0,2000)); //Diner "eats" for rand time between 0 and 2 seconds
+
+            System.out.println("Diner " + id + " is content. Putting forks back.");
+
+            firstFork.release();
+            secondFork.release();
+
+        }
+        System.out.println("Diner " + id + " is full, they are leaving the table.")
     }
     public static void main(String[] args) {
         // USE IF WE WANT USER INPUT FOR DINER_NUM
