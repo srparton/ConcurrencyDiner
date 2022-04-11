@@ -18,43 +18,64 @@ public class DiningPhil extends Thread {
 
     }
 
-    public void run(int id) throws InterruptedException {
-        System.out.println("Diner " + id + " is sitting down at the table.");
+    public void run(){
+        System.out.println("Diner " + thread_id + " is sitting down at the table.");
         int timesEaten = 0;
         Semaphore firstFork;
         Semaphore secondFork;
-        if(id % 2 == 0){                        
-            firstFork = forks[id];      //Half of the diners will call for their left
-            secondFork = forks[(id+1) % DINERS_NUM];   //fork first, then call for their right fork.
+        if(thread_id % 2 == 0){                        
+            firstFork = forks[thread_id];      //Half of the diners will call for their left
+            secondFork = forks[(thread_id+1) % DINERS_NUM];   //fork first, then call for their right fork.
         }
         else{
-            firstFork = forks[(id+1) % DINERS_NUM];    //The other half of the diners will call for
-            secondFork = forks[id];     //the right fork then the left fork.
+            firstFork = forks[(thread_id+1) % DINERS_NUM];    //The other half of the diners will call for
+            secondFork = forks[thread_id];     //the right fork then the left fork.
         }
         while (timesEaten < EAT){
             int sleepTime = ThreadLocalRandom.current().nextInt(0,2000); //determine a random amount of time between 0 and 2 seconds
-            System.out.println("Diner " + id + " says they are thinking.");
-            Thread.sleep(sleepTime); //Diner "Thinks"
-            System.out.println("Diner " + id + " says they are hungry.");
+            System.out.println("Diner " + thread_id + " says they are thinking.");
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } //Diner "Thinks"
+            System.out.println("Diner " + thread_id + " says they are hungry.");
 
             //Code for Grabbing Forks
-            firstFork.acquire();
-            secondFork.acquire(); 
+            try {
+                firstFork.acquire();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            try {
+                secondFork.acquire();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } 
 
 
-            System.out.println("Diner " + id + " has forks and is eating.");
+            System.out.println("Diner " + thread_id + " has forks and is eating.");
             timesEaten++;
 
             sleepTime = ThreadLocalRandom.current().nextInt(0,2000);
-            Thread.sleep(sleepTime); //Diner "eats" for rand time between 0 and 2 seconds
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } //Diner "eats" for rand time between 0 and 2 seconds
 
-            System.out.println("Diner " + id + " is content. Putting forks back.");
+            System.out.println("Diner " + thread_id + " is content. Putting forks back.");
 
             firstFork.release();
             secondFork.release();
 
         }
-        System.out.println("Diner " + id + " is full, they are leaving the table.");
+        System.out.println("Diner " + thread_id + " is full, they are leaving the table.");
     }
 
     public static void main(String[] args) {
