@@ -2,15 +2,15 @@ import java.util.concurrent.Semaphore;
 import java.lang.Thread;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DiningPhil extends Thread {
+public class DiningPhilLast extends Thread {
     
-    public int thread_id; // Used in constructor for DiningPhil
+    public int thread_id; // Used in constructor for DiningPhilLast
     //private static final int MAX_TIME = 10000; // May not be needed in java
     private static final int EAT = 2; //How many times should each philo eat
     private static final int DINERS_NUM = 5; //Number of philos
     private static Semaphore[] forks = new Semaphore[DINERS_NUM];// Array of semaphrores for forks.
 
-    public DiningPhil(int id) {
+    public DiningPhilLast(int id) {
         thread_id = id;
     }
 
@@ -82,11 +82,11 @@ public class DiningPhil extends Thread {
             System.out.println(forks[i]);
         }
 
-        DiningPhil[] philo = new DiningPhil[DINERS_NUM];
+        DiningPhilLast[] philo = new DiningPhilLast[DINERS_NUM];
 
         // Initiallizing diners array with threads
         for (int i = 0; i < DINERS_NUM; i++) {
-            philo[i] = new DiningPhil(i);
+            philo[i] = new DiningPhilLast(i);
             philo[i].start();
         }
 
