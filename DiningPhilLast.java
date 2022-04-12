@@ -20,17 +20,18 @@ public class DiningPhilLast extends Thread {
         Semaphore firstFork;
         Semaphore secondFork;
         int forkID1 = -1, forkID2 = -1;
-        if(thread_id % 2 == 0){                        
-            firstFork = forks[thread_id];      //Half of the diners will call for their left
-            secondFork = forks[(thread_id+1) % DINERS_NUM];   //fork first, then call for their right fork.
-            forkID1 = thread_id;
-            forkID2 = (thread_id+1)%DINERS_NUM;
-        }
-        else{
+        if(thread_id == DINERS_NUM - 1){     
+            //Last philo will pick up left then right                   
             firstFork = forks[(thread_id+1) % DINERS_NUM];    //The other half of the diners will call for
             secondFork = forks[thread_id];     //the right fork then the left fork.
             forkID1 =( thread_id+1)%DINERS_NUM;
             forkID2 = thread_id;
+        }
+        else{
+            firstFork = forks[thread_id];      //Half of the diners will call for their left
+            secondFork = forks[(thread_id+1) % DINERS_NUM];   //fork first, then call for their right fork.
+            forkID1 = thread_id;
+            forkID2 = (thread_id+1)%DINERS_NUM;
         }
         while (timesEaten < EAT){
             int sleepTime = ThreadLocalRandom.current().nextInt(0,2000); //determine a random amount of time between 0 and 2 seconds
