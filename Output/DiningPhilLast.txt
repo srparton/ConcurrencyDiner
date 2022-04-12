@@ -1,50 +1,50 @@
-Diner 3 is sitting down at the table.
 Diner 1 is sitting down at the table.
+Diner 3 is sitting down at the table.
 Diner 4 is sitting down at the table.
 Diner 0 is sitting down at the table.
 Diner 2 is sitting down at the table.
-Diner 3 says they are thinking.
-Diner 2 says they are thinking.
-Diner 0 says they are thinking.
 Diner 1 says they are thinking.
-Diner 4 says they are thinking.
-Diner 2 says they are hungry.
-Diner 2 has forks 2 and 3 and is eating.
-Diner 3 says they are hungry.
-Diner 2 is content. Putting forks back.
 Diner 2 says they are thinking.
-Diner 3 has forks 3 and 4 and is eating.
-Diner 4 says they are hungry.
-Diner 0 says they are hungry.
-Diner 0 has forks 0 and 1 and is eating.
-Diner 1 says they are hungry.
-Diner 0 is content. Putting forks back.
 Diner 0 says they are thinking.
-Diner 1 has forks 1 and 2 and is eating.
-Diner 2 says they are hungry.
-Diner 3 is content. Putting forks back.
+Diner 4 says they are thinking.
 Diner 3 says they are thinking.
-Diner 4 has forks 4 and 0 and is eating.
+Diner 4 says they are hungry.
+Diner 4 has forks 0 and 4 and is eating.
 Diner 4 is content. Putting forks back.
 Diner 4 says they are thinking.
+Diner 0 says they are hungry.
+Diner 0 has forks 0 and 1 and is eating.
+Diner 2 says they are hungry.
+Diner 2 has forks 2 and 3 and is eating.
+Diner 0 is content. Putting forks back.
+Diner 0 says they are thinking.
+Diner 1 says they are hungry.
+Diner 3 says they are hungry.
+Diner 4 says they are hungry.
+Diner 4 has forks 0 and 4 and is eating.
+Diner 0 says they are hungry.
+Diner 2 is content. Putting forks back.
+Diner 2 says they are thinking.
+Diner 1 has forks 1 and 2 and is eating.
+Diner 4 is content. Putting forks back.
+Diner 3 has forks 3 and 4 and is eating.
+Diner 4 is full, they are leaving the table.
+Diner 3 is content. Putting forks back.
+Diner 3 says they are thinking.
+Diner 2 says they are hungry.
 Diner 3 says they are hungry.
 Diner 3 has forks 3 and 4 and is eating.
 Diner 1 is content. Putting forks back.
 Diner 1 says they are thinking.
-Diner 0 says they are hungry.
 Diner 0 has forks 0 and 1 and is eating.
 Diner 3 is content. Putting forks back.
-Diner 2 has forks 2 and 3 and is eating.
 Diner 3 is full, they are leaving the table.
+Diner 2 has forks 2 and 3 and is eating.
 Diner 0 is content. Putting forks back.
 Diner 0 is full, they are leaving the table.
-Diner 4 says they are hungry.
-Diner 4 has forks 4 and 0 and is eating.
 Diner 2 is content. Putting forks back.
 Diner 2 is full, they are leaving the table.
 Diner 1 says they are hungry.
 Diner 1 has forks 1 and 2 and is eating.
 Diner 1 is content. Putting forks back.
 Diner 1 is full, they are leaving the table.
-Diner 4 is content. Putting forks back.
-Diner 4 is full, they are leaving the table.
